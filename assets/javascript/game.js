@@ -26,14 +26,13 @@ $(document).ready(function() {
 	var players = ["playerOne", "playerTwo", "playerThree", "playerFour"];
   
     
-	$('#select-player').on('click','div.players', function(e) {
+	$('#select-player').on('click','div.players', function(event) {
 
 	    console.log('.player clicked');
-	    id = e.target.id; // gets the id
-	    $(e.target).removeClass(".player");
-	    $(e.target).appendTo("#your-character");
-
-	    
+	    id = event.target.id; // gets the id
+	    $(event.target).removeClass("players");
+	    $(event.target).appendTo("#your-character");
+	    $(".players").appendTo("#enemy");
 
     
 	});
