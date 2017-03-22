@@ -1,8 +1,9 @@
 #player-1,
 #player-2,
 #player-3,
+#enemy-fighter,
 #player-4 {
-	height: 50px;
-	width: 50px;
+	height: 100px;
+	width: 100px;
 	border: solid red 4px;
 }
