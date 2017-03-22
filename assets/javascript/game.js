@@ -4,17 +4,10 @@ console.log('Hi there! I am linked to this document');
 $(document).ready(function() {
 
 	//****Variables****
-	//Players
-	var player1 = 100;
-	var player2 = 95;
-	var player3 = 90;
-	var player4 = 85;
 
 	// Counters
 	var playerHealth = 0;
 	var enemyHealth = 0;
-	var playerAttack = 0;
-	var enemyAttack = 0;
 
 	var fighters = ["one","two","three"];
 
@@ -62,13 +55,17 @@ $(document).ready(function() {
 
 		$("#reset").hide();
 
-		var attackPower = 80;
+		var attackPower = 40;
 
 		if (enemyHealth > 0 && playerHealth > 0 )  {
-			enemyHealth -= (Math.floor(Math.random() * attackPower) + 10);
+			var playerHitPower = (Math.floor(Math.random() * attackPower) + 10);
+			enemyHealth -= playerHitPower;
 			$(".enemy-fighter > span").html(enemyHealth);
-			playerHealth -= (Math.floor(Math.random() * 10) + 1);
+			var enemyHitPower = (Math.floor(Math.random() * 20) + 10);
+			playerHealth -= enemyHitPower;
 			$(".playerFighter > span").html(playerHealth);
+			$(".status").html("You hit enemy with " + playerHitPower + " damage and enemy hit you with " + enemyHitPower + " damage.");
+
 		}	
 
 		if (playerHealth <= 0) {
@@ -146,4 +143,3 @@ $(document).ready(function() {
 
 
 console.log('I am still working!');
-
